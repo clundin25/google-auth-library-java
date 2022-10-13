@@ -576,7 +576,7 @@ public class OAuth2Credentials extends Credentials {
     }
   }
 
-  public class RefreshTaskListener implements Runnable {
+  @VisibleForTesting class RefreshTaskListener implements Runnable {
     private ListenableFutureTask<OAuthValue> task;
 
     RefreshTaskListener(ListenableFutureTask<OAuthValue> task) {
@@ -589,7 +589,7 @@ public class OAuth2Credentials extends Credentials {
     }
   }
 
-  public class RefreshTask extends AbstractFuture<OAuthValue> implements Runnable {
+  class RefreshTask extends AbstractFuture<OAuthValue> implements Runnable {
     private final ListenableFutureTask<OAuthValue> task;
     private final RefreshTaskListener listener;
 
